@@ -1,0 +1,17 @@
+---
+
+- name: Automate wordpress deployment using ansible & docker-compose
+  hosts: localhost
+  become: true
+  tasks:
+
+  # Deploy our collection defined by the docker-compose.yml
+  - name: Create & start services
+    docker_compose:
+        project_src: compose
+    register: output
+  
+  - debug:
+      var: output
+
+      

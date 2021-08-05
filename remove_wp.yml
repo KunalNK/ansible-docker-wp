@@ -1,0 +1,14 @@
+---
+
+- name: Automate wordpress deployment using ansible & docker-compose
+  hosts: localhost
+  become: true
+  tasks:
+
+  # Remove the existing services
+      - name: Tear down existing services
+        docker_compose:
+           project_src: compose
+           state: absent
+      
+     
