@@ -1,5 +1,4 @@
 ---
-
 - name: Automate wordpress deployment using ansible & docker-compose
   hosts: web
   become: true
@@ -25,7 +24,7 @@
   - name: Update apt and install docker-ce
     apt: update_cache=yes name=docker-ce state=latest
 
-  - name: Install Docker Module for Python
+  - name: Install docker & docker-compose module
     pip:
       name: 
         - docker
