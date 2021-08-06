@@ -31,8 +31,8 @@
         - docker
         - docker-compose
 
-  - name: Create a directory compose
-    file: path=/root/compose state=directory
+  # - name: Create a directory compose
+  #   file: path=/root/compose state=directory
 
   - name:  Copy docker-compose file into compose directoy
     copy: src=/root/ansible-lab/ansible-docker-wp/compose/ dest=/root/
