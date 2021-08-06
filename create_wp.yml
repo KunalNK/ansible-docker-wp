@@ -5,6 +5,23 @@
   become: true
   tasks:
 
+  - name: Install Docker on ansible node
+    yum:
+      name:
+        - python3
+        - docker
+
+  - name: Install Docker on ansible node
+    pip:
+      name:
+        - docker-compose
+
+  - name: Create a directory compose
+    file: path=/root/compose state=directory
+
+  - name:  Copy docker-compose file into compose directoy
+    copy: src=/root/docker-compose.yml dest=/root/compose
+
   # Deploy our collection defined by the docker-compose.yml
   - name: Create & start services
     docker_compose:
@@ -13,5 +30,3 @@
   
   - debug:
       var: output
-
-      
