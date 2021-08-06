@@ -1,7 +1,7 @@
 ---
 
 - name: Automate wordpress deployment using ansible & docker-compose
-  hosts: localhost
+  hosts: web
   become: true
   tasks:
 
