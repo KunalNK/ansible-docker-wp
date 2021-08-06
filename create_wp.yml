@@ -20,7 +20,7 @@
     file: path=/root/compose state=directory
 
   - name:  Copy docker-compose file into compose directoy
-    copy: src=/root/docker-compose.yml dest=/root/compose
+    copy: src=/root/ansible-docker-wp/compose dest=/root/compose
 
   # Deploy our collection defined by the docker-compose.yml
   - name: Create & start services
